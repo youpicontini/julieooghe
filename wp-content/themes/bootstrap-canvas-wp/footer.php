@@ -11,7 +11,7 @@
 ?>
     </div><!-- /.container -->
 
-    <div class="blog-footer"style="display: none">
+    <div class="blog-footer">
     
       <?php get_sidebar( 'footer' ); ?>
       

@@ -16,14 +16,8 @@
 
         </div><!-- /.blog-main -->
 
-
-          <div class="col-sm-4 description_article">
-              <?php $key="description";get_post_custom_values($key);?>
-              <?php the_meta(); ?>
-          </div>
+        <?php get_sidebar(); ?>
 
       </div><!-- /.row -->
-
-
       
 	<?php get_footer(); ?>

@@ -9,21 +9,21 @@
  */
 ?>
 		<?php if ( is_page_template ( 'page-templates/sidebar-right.php' ) ) : ?>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar-right" style="display: none">
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar-right">
           <?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-            <div id="search" class="sidebar-module widget widget_search" style="display: none">
+            <div id="search" class="sidebar-module widget widget_search">
 				<?php get_search_form(); ?>
 			</div>
 
-			<div id="archives" class="sidebar-module widget widget_archive" style="display: none">
-				<h4><?php _e( 'Archives', 'bootstrapcanvaswp' ); ?></h4>
+			<div id="archives" class="sidebar-module widget widget_archive">
+				<h4><?php _e( 'Archives', 'bootstrapcanvaswp' ); ?></h3>
 				<ul>
 					<?php wp_get_archives( 'type=monthly' ); ?>
 				</ul>
 			</div>
 
 			<div id="meta" class="sidebar-module widget widget_meta">
-				<h4><?php _e( 'Meta', 'bootstrapcanvaswp' ); ?></h4>
+				<h4><?php _e( 'Meta', 'bootstrapcanvaswp' ); ?></h3>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
@@ -33,25 +33,25 @@
 		  <?php endif; // end primary widget area ?>
         </div><!-- /.blog-sidebar -->
         <?php elseif ( is_page_template ( 'page-templates/sidebar-left.php' ) ) : ?>
-        <?php if ( is_rtl() ) : ?>
+        <?php if ( is_rtl() ) : ?> 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar-right">
         <?php else : ?>
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar-left">
         <?php endif; ?>
           <?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-            <div id="search" class="sidebar-module widget widget_search" style="display: none">
+            <div id="search" class="sidebar-module widget widget_search">
 				<?php get_search_form(); ?>
 			</div>
 
-			<div id="archives" class="sidebar-module widget widget_archive" style="display: none">
-				<h4><?php _e( 'Archives', 'bootstrapcanvaswp' ); ?></h4>
+			<div id="archives" class="sidebar-module widget widget_archive">
+				<h4><?php _e( 'Archives', 'bootstrapcanvaswp' ); ?></h3>
 				<ul>
 					<?php wp_get_archives( 'type=monthly' ); ?>
 				</ul>
 			</div>
 
 			<div id="meta" class="sidebar-module widget widget_meta">
-				<h4><?php _e( 'Meta', 'bootstrapcanvaswp' ); ?></h4>
+				<h4><?php _e( 'Meta', 'bootstrapcanvaswp' ); ?></h3>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
@@ -63,19 +63,19 @@
         <?php else: ?>
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-            <div id="search" class="sidebar-module widget widget_search" style="display: none">
+            <div id="search" class="sidebar-module widget widget_search">
 				<?php get_search_form(); ?>
 			</div>
 
-			<div id="archives" class="sidebar-module widget widget_archive" style="display: none">
-				<h4><?php _e( 'Archives', 'bootstrapcanvaswp' ); ?></h4>
+			<div id="archives" class="sidebar-module widget widget_archive">
+				<h4><?php _e( 'Archives', 'bootstrapcanvaswp' ); ?></h3>
 				<ul>
 					<?php wp_get_archives( 'type=monthly' ); ?>
 				</ul>
 			</div>
 
-			<div id="meta" class="sidebar-module widget widget_meta" style="display: none">
-				<h4><?php _e( 'Meta', 'bootstrapcanvaswp' ); ?></h4>
+			<div id="meta" class="sidebar-module widget widget_meta">
+				<h4><?php _e( 'Meta', 'bootstrapcanvaswp' ); ?></h3>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

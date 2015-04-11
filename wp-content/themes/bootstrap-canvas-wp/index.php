@@ -16,7 +16,7 @@
 
       <div class="row">
 
-       <div class="">
+        <div class="col-sm-8 blog-main">
 
           <?php get_template_part( 'loop', 'index' ); ?>
 

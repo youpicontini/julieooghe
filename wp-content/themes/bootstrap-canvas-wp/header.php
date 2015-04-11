@@ -34,7 +34,7 @@
   </head>
   <body <?php body_class(); ?>>
     
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="opacity: 0; min-height: 50px">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
@@ -62,51 +62,17 @@
     </nav>
     
     <?php $header_image = get_header_image(); ?>
-    <div class="col-xs-9 col-sm-4 col-md-2" <?php if ( get_header_image() ) : ?>style="background-image: url( '<?php echo esc_url( $header_image ); ?>'); background-size: cover; background-repeat: no-repeat; background-position: top left; margin-bottom: 30px; width: 100%; height: 100%; min-height: <?php echo HEADER_IMAGE_HEIGHT; ?>px; position: relative; "<?php endif; ?>>
-      <div  <?php if ( get_header_image() ) : ?>style="height: auto; min-height: <?php echo HEADER_IMAGE_HEIGHT; ?>px; position: relative;"<?php endif; ?>>
+    <div class="blog-header" <?php if ( get_header_image() ) : ?>style="background-image: url( '<?php echo esc_url( $header_image ); ?>'); background-size: cover; background-repeat: no-repeat; background-position: top left; margin-bottom: 30px; width: 100%; height: 100%; min-height: <?php echo HEADER_IMAGE_HEIGHT; ?>px; position: relative;"<?php endif; ?>>
+      <div class="container" <?php if ( get_header_image() ) : ?>style="height: auto; min-height: <?php echo HEADER_IMAGE_HEIGHT; ?>px; position: relative;"<?php endif; ?>>
         <?php if ( display_header_text() ) : ?>
         <?php $header_text_color = get_header_textcolor(); ?>
-        <h1 class="blog-title" style="color: #<?php echo $header_text_color ?>; font-size: 18px;margin-top: 0;">Julie</br>Ooghe-Tabanou</br>-</h1>
-
-
-        <p class="lead blog-description" style="color: #<?php echo $header_text_color ?>; font-size: 9px"><?php bloginfo( 'description' ); ?></p>
+        <h1 class="blog-title" style="color: #<?php echo $header_text_color ?>;"><?php bloginfo( 'name' ); ?></h1>
+        <p class="lead blog-description" style="color: #<?php echo $header_text_color ?>"><?php bloginfo( 'description' ); ?></p>
         <?php else : ?>
         <h1 class="blog-title" style="visibility: hidden; margin: 0; padding: 0; font-size: 0;"><?php bloginfo( 'name' ); ?></h1>
         <p class="lead blog-description" style="visibility: hidden; margin: 0; padding: 0; font-size: 0;"><?php bloginfo( 'description' ); ?></p>
         <?php endif; ?>
       </div>
     </div>
-    <div class="col-sm-8 col-md-10 custom-language" style="height:77px">
-        <ul style="padding-left:0;font-size: 13px"><?php pll_the_languages(array('show_names'=>1));?></ul>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-2" id="accordion" role="tablist" aria-multiselectable="true">
-        <?php $args = array(
-            'sort_order' => 'ASC',
-            'sort_column' => 'menu_order'
-        );
-        $pages = get_pages( $args );
-
-        foreach( $pages as $page ) {
-            $content = $page->post_content;
-            if ( ! $content ) // Check for empty page
-                continue;
-
-            $content = apply_filters( 'the_content', $content );
-            ?>
-            <div class="" role="tab" id="headingOne">
-                <h4 style="font-size: 13px">
-                    <a style="color: #000000" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $page->post_name; ?>" aria-expanded="false" aria-controls="collapseOne">
-                        <?php echo $page->post_title; ?>
-                    </a>
-                </h4>
-            </div>
-            <div id="<?php echo $page->post_name; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                <div>
-                    <?php echo $content; ?>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-10">
+    
+    <div class="container">
