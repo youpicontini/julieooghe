@@ -12,18 +12,18 @@
  * @since Bootstrap Canvas WP 1.0
  */
 
-	get_header(); ?>
+get_header(); ?>
 
-      <div class="row">
+<div class="row">
 
-        <div class="col-sm-8 blog-main">
+    <div class="">
 
-          <?php get_template_part( 'loop', 'index' ); ?>
+        <?php get_template_part( 'loop', 'index' ); ?>
 
-        </div><!-- /.blog-main -->
+    </div><!-- /.blog-main -->
 
-        <?php get_sidebar(); ?>
+    <?php get_sidebar(); ?>
 
-      </div><!-- /.row -->
-      
-	<?php get_footer(); ?>
+</div><!-- /.row -->
+
+<?php get_footer(); ?>

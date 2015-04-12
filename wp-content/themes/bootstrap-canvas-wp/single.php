@@ -6,18 +6,24 @@
  * @since Bootstrap Canvas WP 1.0
  */
 
-	get_header(); ?>
+get_header(); ?>
 
-      <div class="row">
+<div class="row">
 
-        <div class="col-sm-8 blog-main">
+    <div class="col-sm-8 blog-main text-format">
 
-          <?php get_template_part( 'loop', 'single' ); ?>
+        <?php get_template_part( 'loop', 'single' ); ?>
 
-        </div><!-- /.blog-main -->
+    </div><!-- /.blog-main -->
 
-        <?php get_sidebar(); ?>
 
-      </div><!-- /.row -->
-      
-	<?php get_footer(); ?>
+    <div class="col-sm-4 description_article text-format" style="font-size: 11px">
+        <?php $key="description";get_post_custom_values($key);?>
+        <?php the_meta(); ?>
+    </div>
+
+</div><!-- /.row -->
+
+
+
+<?php get_footer(); ?>
