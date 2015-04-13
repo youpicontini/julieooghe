@@ -261,6 +261,7 @@ nav > .pager > li > a {
 .post-meta{
     list-style: none;
     padding-left: 0;
+    font-family: 'ASAP', arial, helvetica, sans-serif;!important
 }
 
 .blog-sidebar{
@@ -278,14 +279,10 @@ nav > .pager > li > a {
 .blog-footer{
     display:none
 }
-.attachment-thumbnail.wp-post-image.thumbnail{
 
-    display: inherit;
-    padding: 0px;
-    margin-bottom: 0px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    border: 0px solid #ddd !important;
-    border-radius: 0px;
-    transition: border 0s ease-in-out;
+.attachment-post-thumbnail{
+    width: 100%;
+}
+.akkurat-font{
+    font-family: 'ASAP', arial, helvetica, sans-serif;!important
 }

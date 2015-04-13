@@ -1114,3 +1114,13 @@ function bootstrapcanvaswp_comment( $comment, $args, $depth ) {
   endswitch; // end comment_type check
 }
 endif;
+
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Secondary Image',
+            'id' => 'secondary-image',
+            'post_type' => 'post'
+        )
+    );
+}

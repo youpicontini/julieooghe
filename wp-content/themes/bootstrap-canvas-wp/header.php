@@ -66,7 +66,7 @@
     <div  <?php if ( get_header_image() ) : ?>style="height: auto; min-height: <?php echo HEADER_IMAGE_HEIGHT; ?>px; position: relative;"<?php endif; ?>>
         <?php if ( display_header_text() ) : ?>
             <?php $header_text_color = get_header_textcolor(); ?>
-            <h1 class="blog-title" style="color: #<?php echo $header_text_color ?>; font-size: 18px;margin-top: 0;"><a href="<?php echo home_url(); ?>">Julie</br><span style="white-space: nowrap">Ooghe-Tabanou</span></a></br><span style="color:#0000FF">-</span></h1>
+            <h1 class="blog-title" style="color: #<?php echo $header_text_color ?>; font-size: 18px;margin-top: 0;"><a href="<?php echo home_url(); ?>" style="font-family:ASAP;font-weight: bold">Julie</br><span style="white-space: nowrap;">Ooghe-Tabanou</span></a></br><span style="color:#0000FF">-</span></h1>
 
 
             <p class="lead blog-description" style="color: #<?php echo $header_text_color ?>; font-size: 9px"><?php bloginfo( 'description' ); ?></p>
@@ -76,9 +76,9 @@
         <?php endif; ?>
     </div>
 </div>
-<div class="col-sm-10 col-md-10 custom-language" style="height:77px">
+<div class="col-sm-10 col-md-10 custom-language" style="height:79px">
     <?php $translations = pll_the_languages(array('raw'=>1));?>
-    <div style="padding:0;font-size: 13px">
+    <div style="padding:0;font-size: 13px;font-weight: bold">
         <a href="<?php echo $translations[0]['url'];?>">
             <span                     <?php if (pll_current_language()=='fr'):?>
                                         style="text-decoration: underline"
@@ -116,7 +116,7 @@
             </h4>
         </div>
         <div id="<?php echo $page->post_name; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="  padding-top: 11px;padding-bottom: 10px;">
-            <div style="font-size: 9px">
+            <div class="akkurat-font" style="font-size: 9px">
                 <?php echo $content; ?>
             </div>
         </div>
@@ -129,3 +129,5 @@
 <?php else:?>
 <div class="col-xs-12 col-sm-10 col-md-10" style="padding-top: 48px">
 <?php endif;?>
+
+    <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic' rel='stylesheet' type='text/css'>

@@ -29,19 +29,22 @@ $date_format = get_option( 'date_format' );
         <?php endif; ?>
         <!-- check if the post has a Post Thumbnail assigned to it.-->
 
-        <?php set_post_thumbnail_size( 1080 ,300 );?>
         <?php if ( is_singular() && has_post_thumbnail() ) : ?>
             <!--<?php the_post_thumbnail( 'full' ); ?>-->
         <?php elseif ( has_post_thumbnail() ) : ?>
+
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <?php the_post_thumbnail( 'thumbnail' ); ?>
+                <?php $thumb_id = get_post_thumbnail_id();
+                $thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);?>
+                <img style ="width:100%;"src="<?php echo MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'secondary-image');?>" onmouseover="this.src='<?php echo $thumb_url[0]; ?>'" onmouseout="this.src='<?php echo MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'secondary-image');?>'" />
+
             </a>
         <?php endif; ?>
         <?php if ( is_singular() ) : ?>
             <div style="padding-bottom: 13px">
                 <span class="blog-post-title text-format"style="font-size: 33px;text-transform: uppercase;margin-top: 0; padding-left: 0"><?php the_title(); ?></a></span>
 
-                <span style="padding: 0;font-size: 9px;text-align: right;padding-top: 26px;white-space: nowrap; float: right;display: inline-block">
+                <span style="padding: 0;font-size: 9px;text-align: right;padding-top: 26px;white-space: nowrap; float: right;display: inline-block" class="akkurat-font">
                     <?php
                     if (pll_current_language()=='fr'):
                         previous_post_link('%link', 'Précédent');
